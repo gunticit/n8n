@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    env_file:
+      - .env
+    volumes:
+      - ./n8n_data:/var/www/html/n8n-docker/.n8n
+    networks:
+      - n8n-net
+
+networks:
+  n8n-net:
+    driver: bridge
