@@ -25,7 +25,7 @@ services:
       DB_POSTGRESDB_PASSWORD: n8n
       N8N_BASIC_AUTH_ACTIVE: "true"
       N8N_BASIC_AUTH_USER: admin
-      N8N_BASIC_AUTH_PASSWORD: yourpassword
+      N8N_BASIC_AUTH_PASSWORD: securepassword
       N8N_ENCRYPTION_KEY: your-random-key
       N8N_HOST: vface.id.vn
       N8N_PORT: 5678
