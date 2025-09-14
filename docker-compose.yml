@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: n8n
       POSTGRES_DB: n8n
     volumes:
-      - n8n-postgres:/var/lib/postgresql/data
+      - ./n8n-postgres:/var/lib/postgresql/data
 
   n8n-app:
     image: n8nio/n8n
@@ -27,8 +27,12 @@ services:
       N8N_BASIC_AUTH_USER: admin
       N8N_BASIC_AUTH_PASSWORD: yourpassword
       N8N_ENCRYPTION_KEY: your-random-key
+      N8N_HOST: vface.id.vn
+      N8N_PORT: 5678
+      N8N_PROTOCOL: https
+      WEBHOOK_URL: https://vface.id.vn/
     volumes:
-      - n8n_data:/home/node/.n8n
+      - ./n8n_data:/home/node/.n8n
     depends_on:
       - n8n-db
 
